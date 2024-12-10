@@ -1,0 +1,49 @@
+/* Contenedor de botones */
+.button-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los botones se muevan a la siguiente línea */
+    gap: 20px; /* Espacio entre botones */
+    justify-content: center; /* Centra los botones */
+    margin-bottom: 20px; /* Espacio abajo */
+  }
+  
+  /* Estilo para los botones */
+  .btn {
+    padding: 15px 30px; /* Aumenta el padding (más espacio alrededor del texto) */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    color: white; /* Texto blanco */
+    border-radius: 8px; /* Bordes más redondeados */
+    text-align: center;
+    display: inline-block; /* Hace que el enlace se comporte como un botón */
+    background-color: #007bff; /* Color de fondo para los botones */
+    font-size: 1.2rem; /* Aumenta el tamaño de la fuente */
+    font-weight: bold; /* Hace el texto más grueso */
+    transition: background-color 0.3s ease; /* Transición para el efecto hover */
+    width: 30%; /* Ajusta el ancho de los botones */
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño del botón */
+  }
+  
+  /* Efecto hover para los botones */
+  .btn:hover {
+    background-color: #0056b3; /* Color de fondo cuando el usuario pasa el mouse */
+  }
+  
+  /* Estilos para la primera fila */
+  .button-container > .btn:nth-child(-n+3) {
+    /* Los primeros tres botones ocupan el 100% del contenedor */
+    width: 30%; /* Ajusta el tamaño del botón a un 30% */
+  }
+  
+  /* Estilos para la segunda fila */
+  .button-container > .btn:nth-child(n+4) {
+    width: 45%; /* Los siguientes dos botones ocupan un 45% */
+  }
+  
+  /* Responsividad: Los botones se apilan en pantallas pequeñas */
+  @media (max-width: 768px) {
+    .btn {
+      width: 100%; /* Los botones ocuparán el 100% del ancho en pantallas pequeñas */
+      box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+    }
+  }
+  

@@ -1,0 +1,35 @@
+.container {
+    padding: 1rem;
+  }
+  
+  .box {
+    border: 1px solid #000;
+    text-align: center;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px;
+    box-sizing: border-box;
+  }
+  
+  .len {
+    background-color: firebrick;
+  }
+  
+  .matriz-3x3 .box {
+    background-color: aquamarine;
+  }
+  
+  .non {
+    background-color: rgb(13, 114, 148);
+  }
+  
+  .ji {
+    background-color: rgb(134, 35, 105);
+  }
+  
+  .pep {
+    background-color: blueviolet;
+  }
+  

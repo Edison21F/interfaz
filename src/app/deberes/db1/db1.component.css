@@ -1,0 +1,40 @@
+.box {
+    background-color: lightblue;
+    border: 1px solid #000;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    box-sizing: border-box;
+  }
+  
+  .matrix-5x5 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    background-color: firebrick;
+  }
+  
+  .matrix-5x5 .box {
+    height: 100px;
+    background-color: firebrick;
+  }
+  
+  .matriz-3x3 .box {
+    height: 100px;
+    background-color: aquamarine;
+  }
+  
+  .matriz-4x4 .box {
+    height: 100px;
+    background-color: coral;
+  }
+  
+  .matriz-6x6 .box {
+    height: 100px;
+    background-color: blueviolet;
+  }
+  
