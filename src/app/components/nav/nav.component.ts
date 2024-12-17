@@ -47,7 +47,12 @@ export class NavComponent implements OnInit{
                       label: 'Forms',
                       icon: 'pi pi-table',
                       routerLink: '/forms'
-                  }
+                  },
+                  {
+                    label: 'Carrusel',
+                    icon: 'pi pi-bullseye',
+                    routerLink: '/carrusel'
+                }
               ]
           },
           {

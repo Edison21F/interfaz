@@ -1,13 +1,15 @@
-
-  <div style="display: flex; justify-content: center; align-items: center;">
+<div class="layout-container">
+  <header>
     <h1>Diseño de Interfaces</h1>
-  </div>
-  <div class="button-container">
-    <a routerLink="/deberes/db1" class="btn btn-primary">Deber 1</a>
-    <a routerLink="/deberes/db2" class="btn btn-primary">Deber 2</a>
-    <a routerLink="/deberes/db3" class="btn btn-primary">Deber 3</a>
-    <!--<a routerLink="/deberes/db4" class="btn btn-primary">Deber 4</a>-->
-    <a routerLink="/deberes/db5" class="btn btn-primary">Deber 5</a>
-  </div>
-  <router-outlet/>
+  </header>
+
+  <main class="button-container">
+    <a routerLink="/matrices" class="nav-button">Deber 1</a>
+    <a routerLink="/primeflex" class="nav-button">Deber 2</a>
+    <a routerLink="/card" class="nav-button">Deber 3</a>
+    <a routerLink="/forms" class="nav-button">Deber 4</a>
+    <a routerLink="/carrusel" class="nav-button">Deber 5</a>
+  </main>
   
+  <router-outlet></router-outlet>
+</div>

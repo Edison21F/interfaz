@@ -1,0 +1,10 @@
+.p-field {
+    margin-bottom: 1em;
+  }
+  .p-field-checkbox,
+  .p-field-radiobutton {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+  }
+  

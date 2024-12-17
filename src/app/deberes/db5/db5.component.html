@@ -1,63 +1,39 @@
-<h1>AutoComplete</h1>
-<div class="card flex justify-content-center">
-    <p-autoComplete 
-        [(ngModel)]="selectedItem"
-        [suggestions]="suggestions"
-        (completeMethod)="search($event)" />
+<div class="card">
+  <p-carousel 
+      [value]="products" 
+      [numVisible]="3" 
+      [numScroll]="3" 
+      [circular]="true" 
+      [responsiveOptions]="responsiveOptions" 
+      autoplayInterval="3000">
+      <ng-template let-product pTemplate="item">
+              <div class="border-1 surface-border border-round m-2 p-3">
+                  <div class="mb-3">
+                      <div class="relative mx-auto">
+                          <img 
+                              src="https://i.ytimg.com/vi/dEqOVQiWXfs/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAovBTwA_zuDdgiIIsNHdNdTMNSBg" 
+                              [alt]="product.name" 
+                              class="w-full border-round" />
+                          <p-tag 
+                              [value]="product.inventoryStatus" 
+                              [severity]="getSeverity(product.inventoryStatus)" 
+                              class="absolute" 
+                              [ngStyle]="{ 'left.px': 5, 'top.px': 5 }" />
+                      </div>
+                  </div>
+                  <div class="mb-3 font-medium">
+                      {{ product.name }}
+                  </div>
+                  <div class="flex justify-content-between align-items-center">
+                  <div class="mt-0 font-semibold text-xl">
+                      {{ '$' + product.price }}
+                  </div>
+                      <span>
+                          <p-button icon="pi pi-heart" severity="secondary" [outlined]="true" />
+                          <p-button icon="pi pi-shopping-cart" styleClass="ml-2" />
+                      </span>
+                  </div>
+              </div>
+          </ng-template>
+  </p-carousel>
 </div>
-<div class="card flex justify-content-center" style="padding-top: 1rem;">
-    <p-button label="Submit" />
-</div>
-
-<br>
-<h1>Calendar</h1>
-<div class="card flex flex-wrap gap-3 p-fluid">
-    <div class="flex-auto">
-        <label for="buttondisplay" class="font-bold block mb-2"> Button </label>
-        <p-calendar 
-            [(ngModel)]="date1" 
-            [showIcon]="true" 
-            inputId="buttondisplay" 
-            [showOnFocus]="false" />
-    </div>
-    
-    <div class="flex-auto">
-        <label for="icondisplay" class="font-bold block mb-2"> Default Icon </label>
-        <p-calendar 
-            [(ngModel)]="date2" 
-            [iconDisplay]="'input'" 
-            [showIcon]="true" 
-            inputId="icondisplay" />
-    </div>
-    
-    <div class="flex-auto">
-        <label for="templatedisplay" class="font-bold block mb-2"> Custom Icon </label>
-            <p-calendar 
-                [(ngModel)]="date3" 
-                [iconDisplay]="'input'" 
-                [showIcon]="true" 
-                [timeOnly]="true" 
-                inputId="templatedisplay">
-                    <ng-template pTemplate="inputicon" let-clickCallBack="clickCallBack">
-                        <i 
-                            class="pi pi-clock pointer-events-none pointer-events-none" 
-                            (click)="clickCallBack($event)"></i>
-                    </ng-template>
-            </p-calendar>
-    </div>
-    </div>
-
-<br>
-<h1>CascadeSelect</h1>
-<div class="card flex justify-content-center">
-    <form [formGroup]="formGroup">
-        <p-cascadeSelect 
-            formControlName="selectedCity"
-            [options]="countries"
-            optionLabel="cname"
-            optionGroupLabel="name" 
-            [optionGroupChildren]="['states', 'cities']"
-            [style]="{ minWidth: '14rem' }" 
-            placeholder="Select a City" />
-    </form>
-</div> 

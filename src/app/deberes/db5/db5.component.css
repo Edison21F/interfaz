@@ -1,0 +1,46 @@
+.custom-carousel {
+  margin: 2rem auto;
+}
+
+.car-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.car-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.image-container {
+  width: 100%;
+  height: 180px; /* Tamaño fijo para todas las imágenes */
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que la imagen se recorte proporcionalmente */
+}
+
+.car-details {
+  padding: 1rem;
+  text-align: center;
+  background-color: #f8f9fa;
+  width: 100%;
+}
+
+.car-details h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: bold;
+}

@@ -31,11 +31,11 @@ const routes: Routes = [
     component: Db3Component
   },
   {
-    path: 'db4',
+    path: 'forms',
     component: Db4Component
   },
   {
-    path: 'forms',
+    path: 'carrusel',
     component:Db5Component
   }
 ];
