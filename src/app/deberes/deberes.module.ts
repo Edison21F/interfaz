@@ -12,6 +12,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule, provideHttpClient } from '@angular/common/http';
 import { withFetch } from '@angular/common/http';
+import { GalleriaModule } from 'primeng/galleria';
 
 // PrimeNG Modules
 import { CardModule } from 'primeng/card';
@@ -41,7 +42,7 @@ import { TriStateCheckboxModule } from 'primeng/tristatecheckbox';
 import { FloatLabel } from 'primeng/floatlabel';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @NgModule({
   declarations: [
     Db1Component,
@@ -83,6 +84,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CascadeSelectModule,
     KnobModule,
     TriStateCheckboxModule,
+    GalleriaModule,
+
   ],
   providers: [
     provideHttpClient(withFetch()),

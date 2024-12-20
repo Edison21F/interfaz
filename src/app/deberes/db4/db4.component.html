@@ -1,102 +1,102 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()" class="p-fluid">
-  <!-- InputText -->
+  <!-- Nombre -->
   <div class="field">
-    <label for="inputText">InputText</label>
-    <input id="inputText" type="text" pInputText formControlName="inputText" placeholder="Escribe algo" />
+    <label for="name">Nombre</label>
+    <input id="name" type="text" pInputText formControlName="name" placeholder="Escribe tu nombre" />
   </div>
 
-  <!-- InputNumber -->
+  <!-- Edad -->
   <div class="field">
-    <label for="inputNumber">InputNumber</label>
-    <p-inputNumber id="inputNumber" formControlName="inputNumber" [min]="0" [max]="100" [useGrouping]="false"></p-inputNumber>
+    <label for="age">Edad</label>
+    <p-inputNumber id="age" formControlName="age" [min]="0" [max]="120" [useGrouping]="false"></p-inputNumber>
   </div>
 
-  <!-- Calendar -->
+  <!-- Fecha de nacimiento -->
   <div class="field">
-    <label for="calendar">Calendar</label>
-    <p-calendar id="calendar" formControlName="calendar" [showIcon]="true"></p-calendar>
+    <label for="birthDate">Fecha de Nacimiento</label>
+    <p-calendar id="birthDate" formControlName="birthDate" [showIcon]="true"></p-calendar>
   </div>
 
-  <!-- Dropdown -->
+  <!-- Género -->
   <div class="field">
-    <label for="dropdown">Dropdown</label>
+    <label for="gender">Género</label>
     <p-dropdown
-      id="dropdown"
-      formControlName="dropdown"
-      [options]="options"
+      id="gender"
+      formControlName="gender"
+      [options]="genderOptions"
       optionLabel="label"
-      placeholder="Selecciona una opción"
+      placeholder="Selecciona tu género"
     ></p-dropdown>
   </div>
 
-  <!-- MultiSelect -->
+  <!-- Intereses -->
   <div class="field">
-    <label for="multiSelect">MultiSelect</label>
+    <label for="interests">Intereses</label>
     <p-multiSelect
-      id="multiSelect"
-      formControlName="multiSelect"
-      [options]="options"
+      id="interests"
+      formControlName="interests"
+      [options]="interestOptions"
       optionLabel="label"
-      placeholder="Selecciona múltiples opciones"
+      placeholder="Selecciona tus intereses"
     ></p-multiSelect>
   </div>
 
-  <!-- CascadeSelect -->
+  <!-- Preferencia de Contacto -->
   <div class="field">
-    <label for="cascadeSelect">CascadeSelect</label>
+    <label for="contactPreference">Preferencia de Contacto</label>
     <p-cascadeSelect
-      id="cascadeSelect"
-      formControlName="category"
-      [options]="options"
+      id="contactPreference"
+      formControlName="contactPreference"
+      [options]="contactPreferenceOptions"
       optionLabel="label"
-      placeholder="Selecciona una categoría"
+      placeholder="Selecciona tu preferencia de contacto"
     ></p-cascadeSelect>
   </div>
 
-  <!-- RadioButton -->
+  <!-- Estado de Satisfacción -->
   <div class="field">
-    <label>RadioButton</label>
-    <div *ngFor="let option of options">
+    <label>Estado de Satisfacción</label>
+    <div *ngFor="let option of satisfactionOptions">
       <p-radioButton
         [inputId]="'radio-' + option.value"
-        formControlName="radioValue"
+        formControlName="satisfaction"
         [value]="option.value"
         [label]="option.label"
       ></p-radioButton>
     </div>
   </div>
 
-  <!-- Checkbox -->
+  <!-- Aceptación de términos -->
   <div class="field">
-    <label for="checkbox">Checkbox</label>
-    <p-checkbox id="checkbox" formControlName="checkbox" binary="true" label="Acepto términos y condiciones"></p-checkbox>
+    <label for="acceptTerms">Aceptar Términos y Condiciones</label>
+    <p-checkbox id="acceptTerms" formControlName="acceptTerms" binary="true" label="Acepto términos y condiciones"></p-checkbox>
   </div>
 
-  <!-- TextArea -->
+  <!-- Comentarios -->
   <div class="field">
-    <label for="textArea">TextArea</label>
-    <textarea id="textArea" pInputTextarea formControlName="textArea" rows="4" placeholder="Escribe un comentario"></textarea>
+    <label for="comments">Comentarios</label>
+    <textarea id="comments" pInputTextarea formControlName="comments" rows="4" placeholder="Escribe tus comentarios"></textarea>
   </div>
 
-  <!-- ToggleButton -->
+  <!-- Preferencia de notificaciones -->
   <div class="field">
-    <label for="toggle">ToggleButton</label>
-    <p-toggleButton id="toggle" formControlName="toggle" onLabel="Sí" offLabel="No"></p-toggleButton>
+    <label for="notifications">Preferencia de Notificaciones</label>
+    <p-toggleButton id="notifications" formControlName="notifications" onLabel="Sí" offLabel="No"></p-toggleButton>
   </div>
 
-  <!-- Slider -->
+  <!-- Nivel de satisfacción -->
   <div class="field">
-    <label for="slider">Slider</label>
-    <p-slider id="slider" formControlName="slider" [min]="0" [max]="100"></p-slider>
+    <label for="satisfactionLevel">Nivel de Satisfacción</label>
+    <p-slider id="satisfactionLevel" formControlName="satisfactionLevel" [min]="0" [max]="100"></p-slider>
   </div>
 
-  <!-- FileUpload -->
+  <!-- Cargar documento -->
   <div class="field">
-    <label for="fileUpload">FileUpload</label>
+    <label for="fileUpload">Cargar Documento</label>
     <p-fileUpload id="fileUpload" formControlName="fileUpload" name="demo[]" url="./upload"></p-fileUpload>
   </div>
 
-  <!-- Submit Button -->
+  <!-- Botón de Enviar -->
   <div class="field">
     <button type="submit" pButton label="Enviar" [disabled]="form.invalid"></button>
   </div>

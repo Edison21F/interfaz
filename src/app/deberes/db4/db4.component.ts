@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -6,29 +6,53 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   templateUrl: './db4.component.html',
   styleUrls: ['./db4.component.scss'],
 })
-export class Db4Component {
+export class Db4Component implements OnInit {
   form: FormGroup;
+  genderOptions: any[] = [];
+  interestOptions: any[] = [];
+  contactPreferenceOptions: any[] = [];
+  satisfactionOptions: any[] = [];
   options: any[] = [];
 
   constructor(private fb: FormBuilder) {
     // Inicialización del formulario
     this.form = this.fb.group({
-      inputText: ['', Validators.required],
-      inputNumber: [null, Validators.required],
-      calendar: [null, Validators.required],
-      dropdown: [null, Validators.required],
-      multiSelect: [[], Validators.required],
-      category: [null, Validators.required],
-      radioValue: ['', Validators.required],
-      checkbox: [false, Validators.requiredTrue],
-      textArea: ['', Validators.required],
-      toggle: [false, Validators.required],
-      slider: [50, Validators.required],
+      name: ['', Validators.required],
+      age: [null, Validators.required],
+      birthDate: [null, Validators.required],
+      gender: [null, Validators.required],
+      interests: [[], Validators.required],
+      contactPreference: [null, Validators.required],
+      satisfaction: ['', Validators.required],
+      acceptTerms: [false, Validators.requiredTrue],
+      comments: ['', Validators.required],
+      notifications: [false, Validators.required],
+      satisfactionLevel: [50, Validators.required],
       fileUpload: [null],
     });
-    
 
-    // Opciones para el CascadeSelect con estructura correcta
+    // Opciones para los selectores
+    this.genderOptions = [
+      { label: 'Masculino', value: 'male' },
+      { label: 'Femenino', value: 'female' },
+      { label: 'Otro', value: 'other' }
+    ];
+    this.interestOptions = [
+      { label: 'Deportes', value: 'sports' },
+      { label: 'Música', value: 'music' },
+      { label: 'Tecnología', value: 'technology' }
+    ];
+    this.contactPreferenceOptions = [
+      { label: 'Email', value: 'email' },
+      { label: 'Teléfono', value: 'phone' }
+    ];
+    this.satisfactionOptions = [
+      { label: 'Muy Satisfecho', value: 'very_satisfied' },
+      { label: 'Satisfecho', value: 'satisfied' },
+      { label: 'Neutral', value: 'neutral' },
+      { label: 'Insatisfecho', value: 'unsatisfied' },
+      { label: 'Muy Insatisfecho', value: 'very_unsatisfied' }
+    ];
     this.options = [
       {
         label: 'Frutas',
@@ -46,6 +70,8 @@ export class Db4Component {
       },
     ];
   }
+
+  ngOnInit(): void {}
 
   // Manejo del formulario al enviarlo
   onSubmit(): void {

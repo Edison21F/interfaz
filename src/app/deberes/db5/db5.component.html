@@ -1,39 +1,57 @@
 <div class="card">
-  <p-carousel 
+    <p-carousel 
       [value]="products" 
       [numVisible]="3" 
       [numScroll]="3" 
       [circular]="true" 
       [responsiveOptions]="responsiveOptions" 
-      autoplayInterval="3000">
+      [autoplayInterval]="3000">
       <ng-template let-product pTemplate="item">
-              <div class="border-1 surface-border border-round m-2 p-3">
-                  <div class="mb-3">
-                      <div class="relative mx-auto">
-                          <img 
-                              src="https://i.ytimg.com/vi/dEqOVQiWXfs/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAovBTwA_zuDdgiIIsNHdNdTMNSBg" 
-                              [alt]="product.name" 
-                              class="w-full border-round" />
-                          <p-tag 
-                              [value]="product.inventoryStatus" 
-                              [severity]="getSeverity(product.inventoryStatus)" 
-                              class="absolute" 
-                              [ngStyle]="{ 'left.px': 5, 'top.px': 5 }" />
-                      </div>
-                  </div>
-                  <div class="mb-3 font-medium">
-                      {{ product.name }}
-                  </div>
-                  <div class="flex justify-content-between align-items-center">
-                  <div class="mt-0 font-semibold text-xl">
-                      {{ '$' + product.price }}
-                  </div>
-                      <span>
-                          <p-button icon="pi pi-heart" severity="secondary" [outlined]="true" />
-                          <p-button icon="pi pi-shopping-cart" styleClass="ml-2" />
-                      </span>
-                  </div>
-              </div>
-          </ng-template>
-  </p-carousel>
-</div>
+        <div class="border-1 surface-border border-round m-2 p-3">
+          <div class="mb-3">
+            <div class="relative mx-auto">
+              <img 
+                src="https://i.ytimg.com/vi/dEqOVQiWXfs/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAovBTwA_zuDdgiIIsNHdNdTMNSBg" 
+                [alt]="product.name" 
+                class="w-full border-round" />
+              <p-tag 
+                [value]="product.status" 
+                [severity]="getSeverity(product.status)" 
+                class="absolute" 
+                [ngStyle]="{ 'left.px': 5, 'top.px': 5 }" />
+            </div>
+          </div>
+          <div class="mb-3 font-medium">
+            {{ product.name }}
+          </div>
+          <div class="flex justify-content-between align-items-center">
+            <div class="mt-0 font-semibold text-xl">
+              {{ '$' + product.price }}
+            </div>
+            <span>
+              <p-button icon="pi pi-heart" severity="secondary" [outlined]="true" />
+              <p-button icon="pi pi-shopping-cart" styleClass="ml-2" />
+            </span>
+          </div>
+        </div>
+      </ng-template>
+    </p-carousel>
+  </div>
+  
+  <div class="card">
+    <p-galleria 
+      [value]="images" 
+      [responsiveOptions]="responsiveOptions" 
+      [containerStyle]="{ 'max-width': '640px' }" 
+      [numVisible]="5">
+      <ng-template pTemplate="item" let-item>
+        <img [src]="item.source" style="width: 100%;" />
+      </ng-template>
+      <ng-template pTemplate="thumbnail" let-item>
+        <div class="grid grid-nogutter justify-content-center">
+          <img [src]="item.source" />
+        </div>
+      </ng-template>
+    </p-galleria>
+  </div>
+  

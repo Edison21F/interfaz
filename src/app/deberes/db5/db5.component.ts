@@ -6,25 +6,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./db5.component.css']
 })
 export class Db5Component implements OnInit {
-  // Productos definidos directamente como un arreglo de "any" (datos quemados)
   products: any[] = [];
-
+  images: any[] = [];
   responsiveOptions: any[] = [];
 
   constructor() {}
 
   ngOnInit() {
-    // Datos "quemados" asignados directamente
     this.products = [
       { id: 1, name: 'Producto 1', price: 100, status: 'INSTOCK' },
       { id: 2, name: 'Producto 2', price: 200, status: 'LOWSTOCK' },
       { id: 3, name: 'Producto 3', price: 300, status: 'OUTOFSTOCK' }
     ];
 
+    this.images = [
+      { source: 'https://primefaces.org/cdn/primeng/images/galleria/galleria3.jpg', alt: 'Imagen 1', title: 'Título 1' },
+      { source: 'https://primefaces.org/cdn/primeng/images/galleria/galleria5.jpg', alt: 'Imagen 2', title: 'Título 2' },
+      { source: 'https://primefaces.org/cdn/primeng/images/galleria/galleria6.jpg', alt: 'Imagen 3', title: 'Título 3' }
+    ];
+
     this.responsiveOptions = [
       {
         breakpoint: '1199px',
-        numVisible: 1,
+        numVisible: 3,
         numScroll: 1
       },
       {
@@ -38,9 +42,10 @@ export class Db5Component implements OnInit {
         numScroll: 1
       }
     ];
+    
   }
 
-  getSeverity(status: string) {
+  getSeverity(status: string): string {
     switch (status) {
       case 'INSTOCK':
         return 'success';

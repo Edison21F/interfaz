@@ -44,3 +44,25 @@
   color: #333;
   font-weight: bold;
 }
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.card {
+  padding: 1rem;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+p-carousel .p-carousel-item {
+  padding: 0.5rem;
+}
+
+p-galleria .p-galleria-thumbnail {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
